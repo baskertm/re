@@ -19,7 +19,7 @@
       content: "";
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: url('https://i.ibb.co/fpYFdwn/underwater-light-rays.gif') center/cover no-repeat;
+      background: url('waterunder.gif') center/cover no-repeat;
       opacity: 0.2; z-index: 0;
     }
     .fish {
@@ -125,7 +125,7 @@
         return;
       }
       const formData = new FormData(form);
-      fetch("https://script.google.com/macros/library/d/1t_47cRjikHj5sGlqvVLYFKbN66J_MlRa-nQt9lWmnRwo_DDfCL4e-58G/2", {
+      fetch("https://script.google.com/macros/s/AKfycbzkae1r8eg9zgPKNx_3R4TBZfv7-HGczEHLAKg5GiLHp3m8n_OuQCZWPVcI7lnZg-vDng/exec", {
         method: "POST",
         body: formData
       }).then(() => {
