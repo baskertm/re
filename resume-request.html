@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Request | Baskar</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #001f3f, #0074d9);
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    #typing-info {
+      font-size: 1.1rem;
+      color: #00dffc;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid rgba(255,255,255,0.75);
+      width: 0;
+      animation: typing 5s steps(60, end) forwards, blink 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    .form-container {
+      max-width: 500px;
+      background: #004080cc;
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    input[type="text"], input[type="email"], input[type="tel"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #00dffc;
+      border: none;
+      font-size: 1rem;
+      color: #000;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #00aabb;
+    }
+
+    .waves {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 200px;
+      background: url('https://i.ibb.co/DfGmj78/waves.svg') repeat-x;
+      animation: waveMove 10s linear infinite;
+      opacity: 0.4;
+    }
+
+    @keyframes waveMove {
+      from { background-position-x: 0; }
+      to { background-position-x: 1000px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Request My Resume</h1>
+    <div id="typing-info">Once you submit, the resume will be sent to your email.</div>
+  </header>
+
+  <div class="form-container">
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <h2>Enter Your Details</h2>
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="tel" name="phone" placeholder="Your Phone (optional)">
+      <button type="submit">Request Resume</button>
+    </form>
+  </div>
+
+  <div class="waves"></div>
+
+</body>
+</html>
