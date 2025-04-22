@@ -103,7 +103,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV</title>
+    <title>Bubble Floating Button</title>
     <style>
         body {
             display: flex;
@@ -111,51 +111,72 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #000; /* Black background for better neon visibility */
-        }
-
-        .neon-button {
-            font-size: 20px;
-            font-family: Arial, sans-serif;
-            color: #fff;
-            background-color: transperant;
-            border: 2px solid #3399ff; /* blue neon border */
-            padding: 10px 30px;
-            text-transform: uppercase;
-            text-decoration: 3399ff;
-            letter-spacing: 2px;
-            position: float;
-            display: inline-block;
-            cursor: pointer;
+            background: linear-gradient(to bottom, #1e3c72, #2a5298); /* Gradient background */
             overflow: hidden;
-            transition: 0.2s ease-in-out;
         }
 
-        .neon-button:hover {
-            color: #3399ff;
-            bubble: 0 0 10px #3399ff, 0 0 20px #39ff14, 0 0 30px #39ff14;
+        .bubble-button {
+            font-size: 18px;
+            font-family: Arial, sans-serif;
+            color: white;
+            background: #ff6f61; /* Button color */
+            border: none;
+            border-radius: 50px;
+            padding: 15px 30px;
+            text-transform: uppercase;
+            text-decoration: none;
+            letter-spacing: 2px;
+            cursor: pointer;
+            outline: none;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .neon-button:before {
+        .bubble-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Bubble Animation */
+        .bubble-button:before {
             content: "";
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 50%;
-            height: 50%;
-            background: rgba(57, 255, 20, 0.2); /* Green glow effect */
-            transition: opacity 0.2s ease-in-out;
-            opacity: 0;
+            top: 50%;
+            left: 50%;
+            width: 250%;
+            height: 250%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.4), transparent);
+            transform: translate(-50%, -50%) scale(0);
             z-index: -1;
+            transition: transform 0.5s ease-in-out;
         }
 
-        .neon-button:hover:before {
-            opacity: 75;
+        .bubble-button:hover:before {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        /* Floating Animation */
+        .bubble-button {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
         }
     </style>
 </head>
 <body>
-    <a href="https://baskertm.github.io\cv" class="neon-button">Back to portfolio page</a>
+    <!-- Button -->
+    <a href="https://baskertm.github.io\cv" class="bubble-button">Go\nBack</a>
+</body>
+</html>
     </div>
   </div>
   <script>
